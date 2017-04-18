@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <Description>Utilities and base implementations for search abstractions.</Description>
+    <RepositoryUrl>https://github.com/OneFrameLink/Ofl.Search.git</RepositoryUrl>
+    <PackageTags>search</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ofl.Core" Version="1.8.6" />
+    <PackageReference Include="Ofl.Search.Abstractions" Version="1.0.1" />
+  </ItemGroup>
+
+</Project>
