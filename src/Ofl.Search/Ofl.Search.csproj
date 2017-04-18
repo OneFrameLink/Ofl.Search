@@ -5,6 +5,7 @@
     <Description>Utilities and base implementations for search abstractions.</Description>
     <RepositoryUrl>https://github.com/OneFrameLink/Ofl.Search.git</RepositoryUrl>
     <PackageTags>search</PackageTags>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
