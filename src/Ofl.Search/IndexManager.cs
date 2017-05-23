@@ -2,34 +2,18 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Ofl.Core;
-using Ofl.Core.Linq;
-using Ofl.Core.Collections.Generic;
+using Ofl.Linq;
 
 namespace Ofl.Search
 {
-    public class IndexManager : Disposable, IIndexManager
+    public class IndexManager : IIndexManager
     {
         #region Constructor
 
         public IndexManager(IEnumerable<IIndex> indexes)
         {
             // Validate parameters.
-            if (indexes == null) throw new ArgumentNullException(nameof(indexes));
-
-            // Create a dictionary.
-            var ro = new Dictionary<string, IIndex>();
-
-            // Cycle.
-            foreach (IIndex index in indexes)
-            {
-                // Add to the disposables, add to the dictionary.
-                ro.Add(index.Name, index);
-                Disposables.Add(index);
-            }
-
-            // Set the ro dictionary.
-            _indexes = ro.WrapInReadOnlyDictionary();
+            _indexes = indexes?.ToReadOnlyDictionary(i => i.Name) ?? throw new ArgumentNullException(nameof(indexes));
         }
 
         #endregion
@@ -62,6 +46,31 @@ namespace Ofl.Search
             // Return.
             return Task.FromResult(indicies);
         }
+
+        #endregion
+
+        #region IDisposable implementation.
+
+        public void Dispose()
+        {
+            // Call the overload, suppress finalize.
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            // Dispose of unamanged resources.
+
+            // If not disposing, get out.
+            if (!disposing) return;
+
+            // Dispose of resources.
+            foreach (IIndex disposable in _indexes.Values)
+                using (disposable) { }
+        }
+
+        ~IndexManager() => Dispose(false);
 
         #endregion
     }

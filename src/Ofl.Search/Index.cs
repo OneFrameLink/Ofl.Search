@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Ofl.Core;
 
 namespace Ofl.Search
 {
-    public abstract class Index : Disposable, IIndex
+    public abstract class Index : IIndex
     {
         #region Constructor
 
@@ -50,6 +49,33 @@ namespace Ofl.Search
             where T : class
         {
             throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region IDisposable implementation
+
+        public void Dispose()
+        {
+            // Call the overload, suppress finalization.
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            // Dispose of unmanaged resources.
+
+            // If not disposing, get out.
+            if (!disposing) return;
+
+            // Dispose IDisposable implementations.
+        }
+
+        ~Index()
+        {
+            // Call Dispose.
+            Dispose(false);
         }
 
         #endregion
