@@ -12,7 +12,7 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="1.1.1" />
     <PackageReference Include="Ofl.Collections" Version="1.0.4" />
     <PackageReference Include="Ofl.Linq" Version="1.0.3" />
-    <PackageReference Include="Ofl.Search.Abstractions" Version="3.0.9" />
+    <PackageReference Include="Ofl.Search.Abstractions" Version="3.0.10" />
   </ItemGroup>
 
 </Project>
