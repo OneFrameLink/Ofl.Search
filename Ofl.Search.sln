@@ -1,15 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.4
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ofl.Search", "src\Ofl.Search\Ofl.Search.csproj", "{F6D4E0A4-1C32-4A66-838F-97459E0F47E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ofl.Search", "src\Ofl.Search\Ofl.Search.csproj", "{F6D4E0A4-1C32-4A66-838F-97459E0F47E3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{032D439F-D597-4C96-9122-D0F62F24D93B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BAEA1C3E-4BA0-4DF5-9247-718C8C8301D8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ofl.Search.Tests", "test\Ofl.Search.Tests\Ofl.Search.Tests.csproj", "{03FB04CE-A860-47BB-B369-186A76CF8555}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-level items", "solution-level items", "{2070639B-321E-4A07-A9FB-4A7F60E7C443}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		directory.build.props = directory.build.props
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,5 +41,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F6D4E0A4-1C32-4A66-838F-97459E0F47E3} = {032D439F-D597-4C96-9122-D0F62F24D93B}
 		{03FB04CE-A860-47BB-B369-186A76CF8555} = {BAEA1C3E-4BA0-4DF5-9247-718C8C8301D8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E7DDBC0-7D53-4D96-AE46-4F3A233ADDA0}
 	EndGlobalSection
 EndGlobal
