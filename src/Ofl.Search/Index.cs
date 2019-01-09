@@ -39,18 +39,6 @@ namespace Ofl.Search
             throw new NotImplementedException();
         }
 
-        public virtual Task<IIndexWriteOperations<T>> GetWriteOperationsAsync<T>(CancellationToken cancellationToken)
-            where T : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public virtual Task<IIndexReadOperations<T>> GetReadOperationsAsync<T>(CancellationToken cancellationToken)
-            where T : class
-        {
-            throw new NotImplementedException();
-        }
-
         #endregion
 
         #region IDisposable implementation
