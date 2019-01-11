@@ -10,10 +10,15 @@ namespace Ofl.Search
     {
         #region Constructor
 
-        public IndexManager(IEnumerable<IIndex> indexes)
+        public IndexManager(IIndexFactory indexFactory)
         {
             // Validate parameters.
-            _indexes = indexes?.ToReadOnlyDictionary(i => i.Name) ?? throw new ArgumentNullException(nameof(indexes));
+            if (indexFactory == null) throw new ArgumentNullException(nameof(indexFactory));
+
+            // Set indexes.
+            _indexes = indexFactory
+                .CreateIndices()
+                .ToReadOnlyDictionary(i => i.Name);
         }
 
         #endregion
