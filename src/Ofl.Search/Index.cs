@@ -23,21 +23,11 @@ namespace Ofl.Search
 
         public string Name { get; }
 
-        public virtual Task RegenerateAsync(CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract Task<bool> ExistsAsync(CancellationToken cancellationToken);
 
-        public virtual Task CreateAsync(CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract Task CreateAsync(CancellationToken cancellationToken);
 
-
-        public virtual Task DestroyAsync(CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract Task DestroyAsync(CancellationToken cancellationToken);
 
         #endregion
 
