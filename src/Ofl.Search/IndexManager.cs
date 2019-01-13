@@ -65,7 +65,7 @@ namespace Ofl.Search
 
         protected virtual void Dispose(bool disposing)
         {
-            // Dispose of unamanged resources.
+            // Dispose of unmanaged resources.
 
             // If not disposing, get out.
             if (!disposing) return;
