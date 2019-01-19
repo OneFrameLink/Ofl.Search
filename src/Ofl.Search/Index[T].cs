@@ -9,22 +9,18 @@ namespace Ofl.Search
     {
         #region Constructor
 
-        protected Index(string name) : base(name)
+        protected Index(string name) : base(name, typeof(T))
         { }
 
         #endregion
 
         #region Implementation of IIndex
 
-        public virtual Task<IIndexWriteOperations<T>> GetWriteOperationsAsync(CancellationToken cancellationToken)
-        {
+        public virtual Task<IIndexWriteOperations<T>> GetWriteOperationsAsync(CancellationToken cancellationToken) =>
             throw new NotImplementedException();
-        }
 
-        public virtual Task<IIndexReadOperations<T>> GetReadOperationsAsync(CancellationToken cancellationToken)
-        {
+        public virtual Task<IIndexReadOperations<T>> GetReadOperationsAsync(CancellationToken cancellationToken) =>
             throw new NotImplementedException();
-        }
 
         #endregion
     }

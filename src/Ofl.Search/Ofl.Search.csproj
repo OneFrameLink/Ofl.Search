@@ -5,7 +5,7 @@
     <Description>Utilities and base implementations for search abstractions.</Description>
     <RepositoryUrl>https://github.com/OneFrameLink/Ofl.Search.git</RepositoryUrl>
     <PackageTags>search</PackageTags>
-    <Version>6.0.0</Version>
+    <Version>6.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,7 +13,7 @@
     <PackageReference Include="Nito.AsyncEx.Coordination" Version="1.0.2" />
     <PackageReference Include="Ofl.Collections" Version="1.2.8" />
     <PackageReference Include="Ofl.Linq" Version="2.1.15" />
-    <PackageReference Include="Ofl.Search.Abstractions" Version="5.0.20" />
+    <PackageReference Include="Ofl.Search.Abstractions" Version="5.1.23" />
   </ItemGroup>
 
 </Project>

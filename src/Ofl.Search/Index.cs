@@ -8,10 +8,11 @@ namespace Ofl.Search
     {
         #region Constructor
 
-        protected Index(string name)
+        protected Index(string name, Type type)
         {
             // Validate parameters.
             if (string.IsNullOrWhiteSpace(name)) throw new ArgumentNullException(nameof(name));
+            Type = type ?? throw new ArgumentNullException(nameof(type));
 
             // Assign values.
             Name = name;
@@ -23,11 +24,15 @@ namespace Ofl.Search
 
         public string Name { get; }
 
+        public Type Type { get; }
+
         public abstract Task<bool> ExistsAsync(CancellationToken cancellationToken);
 
         public abstract Task CreateAsync(CancellationToken cancellationToken);
 
         public abstract Task DestroyAsync(CancellationToken cancellationToken);
+
+        public abstract Task<IndexStats> GetStatsAsync(CancellationToken cancellationToken);
 
         #endregion
 
